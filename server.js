@@ -18,6 +18,9 @@ app.listen(PORT, () => {
     console.log('Success! Server is now running.');
 });
 
+
+app.use(express.static('public'));
+
 // route to GET request for homepage
 app.get('/', (req, res, next) => {
 
