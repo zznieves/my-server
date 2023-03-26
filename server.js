@@ -14,3 +14,10 @@ app.listen(PORT, () => {
     // code to run once server is up and running
     console.log('Success! Server is now running.');
 });
+
+// route to GET request for homepage
+app.get('/', (req, res, next) => {
+
+    // code to handle the request and send a response
+    res.status(200).send('Hello World!');
+});
