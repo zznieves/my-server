@@ -5,6 +5,9 @@ const express = require('express');
 // create an Express server
 const app = express();
 
+// import Path core module to work with filepaths/directory
+const path = require('path');
+
 // variable to reference port number for server
 const PORT = process.env.PORT || 4001;
 
@@ -19,5 +22,6 @@ app.listen(PORT, () => {
 app.get('/', (req, res, next) => {
 
     // code to handle the request and send a response
-    res.status(200).send('Hello World!');
+    console.log(__dirname); // test code for development
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
